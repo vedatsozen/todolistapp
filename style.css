@@ -1,0 +1,118 @@
+body {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    text-align:center;
+    background-color: rgb(208, 223, 188);
+    color: rgb(0,125,125);
+    margin-top: 20px;
+}
+
+html {
+    user-select: none;
+}
+
+h1.title {
+    font-size:60px;
+    margin: auto;
+    letter-spacing: 5px;
+}
+
+#plannercontainer {
+    margin: auto;
+    height: fit-content;
+    width:1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding:10px;
+    margin-top: 20px;
+
+}
+
+#plannercontainer > div {
+    height:40px;
+    width:100%;
+    border:1px solid rgb(0,125,125);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input {
+    margin: auto;
+    font-size: 16px;
+    padding: 10px;
+}
+
+button {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(0,125,125);
+    color:rgb(208, 223, 188);
+    border: none;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(2, 30, 30);
+}
+
+.contentclass {
+    height: 100%;
+    width:80%;
+    background-color:rgb(0,125,125);
+    color:white;
+    font-size: 18px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dateclass {
+    height:40px;
+    width:15%;
+    background-color:rgb(5, 28, 28);
+    color:white;
+    font-size: 18px;
+    letter-spacing: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tdclass {
+    height: 100%;
+    width:5%;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trashclass {
+    height:25px;
+    width:25px;
+}
+
+.trash2class {
+    height:25px;
+    width:25px;
+
+}
+
+img {
+    cursor: pointer;
+}

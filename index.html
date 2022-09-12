@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMINDER</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 class="title">TO DO LIST</h1>
+<input id="dateid" type="date">
+<input id="inputid" type="text" placeholder="Enter Your Task">
+<button type="text" onclick="addNew()">Add New</button>
+<p>Please double click to any task to update it</p>
+<div id="plannercontainer">
+
+</div>
+</body>
+
+<script>
+
+
+
+function addNew() {
+
+
+    
+    const newTask = document.getElementById("inputid").value;
+    const taskDate = document.getElementById("dateid").value;
+
+    if ( newTask == "" || taskDate == "" ) {
+
+        alert("Please choose a date and enter a task");
+
+    }
+
+    else {
+
+    const newTaskDiv = document.createElement("div");
+    document.getElementById("plannercontainer").appendChild(newTaskDiv);
+    newTaskDiv.classList.add("newtaskdivclass")
+
+    const dateDiv = document.createElement("div");
+    dateDiv.classList.add("dateclass");
+
+    newTaskDiv.appendChild(dateDiv);
+    dateDiv.innerHTML = taskDate ;
+
+    const newContentDiv = document.createElement("div");
+    newContentDiv.classList.add("contentclass");
+    newTaskDiv.appendChild(newContentDiv);
+    newContentDiv.innerText = newTask;
+
+    newContentDiv.addEventListener("dblclick", function() {
+        let newerTask = prompt("Please update your task");
+        newContentDiv.innerHTML = newerTask ;
+    });
+
+    const trashDiv = document.createElement("div");
+    trashDiv.classList.add("tdclass");
+    newTaskDiv.appendChild(trashDiv);
+
+    const trash = document.createElement("img");
+    trash.classList.add("trashclass");
+    trash.src = "images/trash.png";
+    trashDiv.appendChild(trash);
+
+    trash.addEventListener("mouseover", function() {
+    trash.src = "images/trash2.png"
+    trash.classList.add("trash2class");
+    })
+
+    trash.addEventListener("mouseleave", function() {
+    trash.src = "images/trash.png"
+    trash.classList.add("trash2class");
+    })
+
+    trash.addEventListener("click", function() {
+    newTaskDiv.remove();
+    })
+
+
+    document.getElementById("inputid").addEventListener("click", function() {
+    document.getElementById("inputid").value = "" ;
+    })
+
+     
+ 
+}
+
+}
+
+
+
+
+
+</script>
+</html>
